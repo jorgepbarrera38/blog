@@ -15,7 +15,7 @@ Route::get('contacto', 'BlogController@contact')->name('blog.contact');
 Route::post('contacto', 'BlogController@contactstore')->name('blog.contact.store');
 Route::resource('blog', 'BlogController');
 
-Route::group(['prefix'=>'administration', 'middlware'=>'auth'], function(){
+Route::group(['prefix'=>'administration', 'middleware'=>'auth'], function(){
     Route::redirect('/', 'administration/dashboard');
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
 

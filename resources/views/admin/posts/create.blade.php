@@ -39,3 +39,9 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace('body');
+</script>
+@endsection
