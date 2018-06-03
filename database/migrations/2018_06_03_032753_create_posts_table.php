@@ -15,13 +15,16 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 32)->unique(); //151
+            $table->string('title', 80)->unique(); //151
             $table->string('slug')->unique();
             $table->string('excerpt', 151);
             $table->text('body');
             $table->string('imagesmall');
             $table->string('imagelarge');
-            $table->boolean('outstanding')->default(false);
+            $table->boolean('outstanding')->default(false); //Destacado
+            $table->boolean('published')->default(true);
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

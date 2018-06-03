@@ -17,18 +17,20 @@
 		</span>
 	</section>
 
-	<!-- Section -->
-	<section>
-		<header class="major">
-			<h2>Artículo estacado</h2>
-		</header>
+	<!-- Section articulo destacado-->
+	@if($outstanding)
+		<section>
+			<header class="major">
+				<h2>Artículo estacado</h2>
+			</header>
 
-		<h2>{{ $outstanding->title }}</h2>
-		<p>{!! substr($outstanding->body, 0, 380) !!}...</p>
-		<ul class="actions">
-			<li><a href="{{ route('blog.show', $outstanding->slug) }}" class="button">Leer más</a></li>
-		</ul>
-	</section>
+			<h2>{{ $outstanding->title }}</h2>
+			<p>{!! substr($outstanding->body, 0, 380) !!}...</p>
+			<ul class="actions">
+				<li><a href="{{ route('blog.show', $outstanding->slug) }}" class="button">Leer más</a></li>
+			</ul>
+		</section>
+	@endif
 
 	<!-- Section -->
 	<section>
@@ -46,6 +48,7 @@
 					</ul>
 				</article>
 			@endforeach
-		</div>
+		</div><br>
+		<center>{{ $posts->render('pagination.default') }}</center>
 	</section>
 @endsection
