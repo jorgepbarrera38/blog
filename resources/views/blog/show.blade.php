@@ -8,7 +8,7 @@
 
         <span class="image main"><img src="{{ asset($post->imagelarge) }}" alt="" /></span>
 
-        <p>{{ $post->body }}</p>
+        <p>{!! $post->body !!}</p>
         
         <!--<hr class="major" />
 

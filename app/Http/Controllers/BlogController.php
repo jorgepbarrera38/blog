@@ -9,8 +9,9 @@ class BlogController extends Controller
 {
 
     public function index(){
+        $outstanding = Post::where('outstanding', true)->first();
         $posts = Post::latest()->get();
-        return view('blog.index', compact('posts'));
+        return view('blog.index', compact('posts', 'outstanding'));
     }
 
     public function show($slug){

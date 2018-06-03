@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('imagesmall');
             $table->string('imagelarge');
+            $table->boolean('outstanding')->default(false);
             $table->timestamps();
         });
     }
