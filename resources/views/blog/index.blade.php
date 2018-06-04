@@ -7,10 +7,7 @@
 				<h1>Bienvenido</h1>
 				<p>A cosas interesantes y curiosidades</p>
 			</header>
-			<p>Aquí encontrarás de todo, quédate todo el tiempo que quieras :D, aprende muchas cosas, desde herramientas y tips para hacerte la vida más fácil, hasta conocer a cerca de las curiosidades del mundo que nos rodea. Espero que tu estadía en esta web sea larga y placentera y sobre todo que encuentres todo lo que necesitas, Buen dia.</p>
-			<ul class="actions">
-				<li><a href="#" class="button big">Learn More</a></li>
-			</ul>
+			<p>Aquí encontrarás de todo, quédate todo el tiempo que quieras :D, aprende muchas cosas, desde herramientas y tips para hacerte la vida más fácil, hasta conocer a cerca de las curiosidades del mundo que nos rodea. Espero que tu estadía en esta web sea larga y placentera y sobre todo que encuentres todo lo que necesitas, buen dia.</p>
 		</div>
 		<span class="image object">
 			<img src="{{ asset('page/images/pic10.jpg') }}" alt="" />
@@ -48,7 +45,7 @@
 					</ul>
 				</article>
 			@endforeach
-		</div><br>
+		</div><br><br>
 		<center>{{ $posts->render('pagination.default') }}</center>
 	</section>
 @endsection
