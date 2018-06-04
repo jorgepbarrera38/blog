@@ -30,7 +30,7 @@
                     <input type="file" name="imagesmall" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Imagen grande</label>
+                    <label for="">Imagen de portada</label>
                     <input type="file" name="imagelarge" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>

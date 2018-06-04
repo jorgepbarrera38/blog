@@ -76,18 +76,12 @@
 										<h2>Quizás te interese</h2>
 									</header>
 									<div class="mini-posts">
+										@foreach($posts_sidebar as $post_sidebar)
 										<article>
-											<a href="#" class="image"><img src="{{ asset('page/images/pic07.jpg')}}" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<a href="{{ route('blog.show', $post_sidebar->slug) }}" class="image"><img src="{{ asset('page/images/pic07.jpg')}}" alt="" /></a>
+											<p>{{ $post_sidebar->title }}</p>
 										</article>
-										<article>
-											<a href="#" class="image"><img src="{{ asset('page/images/pic08.jpg')}}" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="{{ asset('page/images/pic09.jpg')}}" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
+										@endforeach
 									</div>
 									<ul class="actions">
 										<li><a href="#" class="button">More</a></li>
@@ -97,14 +91,12 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Get in touch</h2>
+										<h2>Sígueme en redes </h2>
 									</header>
 									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-										<li class="fa-phone">(000) 000-0000</li>
-										<li class="fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li class="fa-envelope-o"><a href="">cosasinteresantesycuriosidades@gmail.com</a></li>
+										<li class="fa-facebook"><a href="https://www.facebook.com/cosasinteresantesycuriosidades1" target="_blank"> Facebook</a></li>
 									</ul>
 								</section>
 

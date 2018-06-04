@@ -40,7 +40,7 @@
 		<div class="posts">
 			@foreach($posts as $post)
 				<article>
-					<a href="#" class="image"><img src="{{ asset($post->imagesmall) }}" alt="" /></a>
+					<a href="{{ route('blog.show', $post->slug) }}" class="image"><img src="{{ asset($post->imagesmall) }}" alt="" /></a>
 					<h3>{{ $post->title }}</h3>
 					<p>{{ $post->excerpt }}</p>
 					<ul class="actions">

@@ -51,7 +51,7 @@ class PostController extends Controller
             'excerpt' => 'Extracto', 
             'body' => 'Contenido',
             'imagesmall' => 'Imagen pequeña',
-            'imagelarge' => 'Imagen grande'
+            'imagelarge' => 'Imagen de portada'
         ]);
         
         $post_title = $request->input('title');
