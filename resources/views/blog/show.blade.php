@@ -6,7 +6,7 @@
             <h1>{{ $post->title }}</h1>
         </header>
 
-        <span class="image main"><img src="{{ asset($post->imagelarge) }}" alt="" /></span>
+        <span class="image main"><img src="{{ secure_asset($post->imagelarge) }}" alt="" /></span>
 
         <p>{!! $post->body !!}</p>
         

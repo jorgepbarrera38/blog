@@ -40,7 +40,7 @@
     </div>
 @endsection
 @section('scripts')
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script src="{{ secure_asset('ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace('body');
 </script>

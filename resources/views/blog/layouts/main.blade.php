@@ -10,7 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{{ asset('page/assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ secure_asset('page/assets/css/main.css') }}" />
 		@yield('css')
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -78,7 +78,7 @@
 									<div class="mini-posts">
 										@foreach($posts_sidebar as $post_sidebar)
 										<article>
-											<a href="{{ route('blog.show', $post_sidebar->slug) }}" class="image"><img src="{{ asset($post_sidebar->imagesmall) }}" alt="" /></a>
+											<a href="{{ route('blog.show', $post_sidebar->slug) }}" class="image"><img src="{{ secure_asset($post_sidebar->imagesmall) }}" alt="" /></a>
 											<p>{{ $post_sidebar->title }}</p>
 										</article>
 										@endforeach
@@ -103,11 +103,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="{{ asset('page/assets/js/jquery.min.js') }}"></script>
-			<script src="{{ asset('page/assets/js/skel.min.js') }}"></script>
-			<script src="{{ asset('page/assets/js/util.js') }}"></script>
+			<script src="{{ secure_asset('page/assets/js/jquery.min.js') }}"></script>
+			<script src="{{ secure_asset('page/assets/js/skel.min.js') }}"></script>
+			<script src="{{ secure_asset('page/assets/js/util.js') }}"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js') }}"></script><![endif]-->
-			<script src="{{ asset('page/assets/js/main.js') }}"></script>
+			<script src="{{ secure_asset('page/assets/js/main.js') }}"></script>
 			@yield('scripts')
 
 	</body>
