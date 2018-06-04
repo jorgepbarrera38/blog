@@ -1,4 +1,7 @@
 @extends('blog.layouts.main')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('toastr/css/toastr.min.css') }}">
+@endsection
 @section('content')
 <section>
         <header class="main">
@@ -7,10 +10,8 @@
 
         <!-- Content -->
             <h2 id="content">¿Quieres que publiquemos algo?</h2>
-            <p>Si tienes alguna duda o quieres algún contenido en especial puedes pedirlo para que lo publiquemos, déjanos tu mensaje en el formulario de abajo.</p>
-            
-</section>
-<section>
+            <p>Si tienes alguna duda o quieres algún contenido en especial puedes pedirlo para que lo publiquemos, déjanos tu mensaje en el siguiente formulario</p>
+  
         <form method="post" action="{{ route('blog.contact.store') }}">
                 @include('partials.errors')
                 @csrf
@@ -34,4 +35,12 @@
                 </div>
             </form>
 </section>
+@endsection
+@section('scripts')
+<script src="{{ asset('toastr/js/toastr.min.js') }}"></script>
+       @if(session('info'))
+            <script>
+                toastr.success('{{ session('info') }}')
+            </script>
+        @endif
 @endsection

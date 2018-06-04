@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Message;
 
 class BlogController extends Controller
 {
@@ -30,11 +31,29 @@ class BlogController extends Controller
     }
 
     public function contactstore(Request $request){
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:100',
-            'body' => 'required|string|max:200',
+            'body' => 'required|string|max:250',
+        ], [
+            'name.required' => 'Debes escribir tu nombres completos',
+            'email.required' => 'Debes escribir tu correo electrónico',
+            'body.required' => 'Debes escribir un mensaje',
+        ], [
+            'name' => 'Nombres completos',
+            'email' => 'Correo electrónico',
+            'body' => 'Mensaje'
         ]);
+
+        Message::create($data);
+
+        return redirect()->back()->with('info', 'Tu mensaje se envió correctamente, gracias por escribirnos, pronto te responderemos');
+
+    }
+
+    public function aboutus(){
+        $posts_sidebar = Post::where('published', true)->inRandomOrder()->take(3)->get();
+        return view('blog.aboutus', compact('posts_sidebar'));
     }
 
 }

@@ -11,8 +11,9 @@
 |
 */
 Route::redirect('/', 'blog');
-Route::get('contacto', 'BlogController@contact')->name('blog.contact');
-Route::post('contacto', 'BlogController@contactstore')->name('blog.contact.store');
+Route::get('contact', 'BlogController@contact')->name('blog.contact');
+Route::post('contact', 'BlogController@contactstore')->name('blog.contact.store');
+Route::get('about-us', 'BlogController@aboutus')->name('blog.aboutus');
 Route::resource('blog', 'BlogController');
 
 Route::group(['prefix'=>'administration', 'middleware'=>'auth'], function(){
