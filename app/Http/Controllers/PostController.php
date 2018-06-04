@@ -15,8 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $post_outstanding = Post::where('outstanding', true)->first();
         $posts = Post::latest()->paginate(10);
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'post_outstanding'));
     }
 
     /**
@@ -76,6 +77,21 @@ class PostController extends Controller
         $post->save();
 
         return redirect()->back()->with('info', 'Estado del post actualizado correctamente');;
+    }
+
+    public function selectgoutstanding($slug){
+
+        $posts_last_outstanding = Post::where('outstanding', true)->get();
+        foreach ($posts_last_outstanding as $item) {
+            $item->outstanding = false;
+            $item->save();
+        }
+
+        $post = Post::where('slug', $slug)->first();
+        $post->outstanding = true;
+        $post->save();
+
+        return redirect()->back()->with('info', 'Post destacado correctamente');;
     }
 
     /**

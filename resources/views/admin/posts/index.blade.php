@@ -18,7 +18,41 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Listado de posts creados
+                    Post destacado
+                </div>
+                <div class="panel-body">
+                    @if($post_outstanding)
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Slug</th>
+                                        <th>Extracto</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{ $post_outstanding->title }}</td>
+                                    <td><a target="_blank" href="{{ route('blog.show', $post_outstanding->slug) }}">{{ $post_outstanding->slug }}</a></td>
+                                    <td>{{ $post_outstanding->excerpt }}</td>
+                                    <td>{{ $post_outstanding->published ? 'Publicado': 'No publicado' }}</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    @else
+                        No tienes un post destacado para la página de inicio
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Listado de todos los posts
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -28,7 +62,6 @@
                                 <tr>
                                     <th>Título</th>
                                     <th>Slug</th>
-                                    <!--<th>excerpt</th>-->
                                     <th>Publicado</th>
                                     <th>Acción</th>
                                 </tr>
@@ -49,6 +82,13 @@
                                     <td nowrap>
                                         <a href="" class="btn btn-warning btn-sm">Editar</a>
                                         <a href="" class="btn btn-danger btn-sm">Eliminar</a>
+                                        @if($post->outstanding != true)
+                                            <a onclick="getElementById('outstanding-{{ $post->id }}').submit()" class="btn btn-info btn-sm">Destacar</a>
+                                            <form id="outstanding-{{ $post->id }}" action="{{ route('posts.selectgoutstanding', $post->slug) }}" method="POST">
+                                                @csrf
+                                                {{ method_field('PUT') }}
+                                            </form>
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach

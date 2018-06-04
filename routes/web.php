@@ -21,6 +21,7 @@ Route::group(['prefix'=>'administration', 'middleware'=>'auth'], function(){
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
 
     Route::put('posts/changestate/{slug}', 'PostController@changestate')->name('posts.changestate');
+    Route::put('posts/selectgoutstanding/{slug}', 'PostController@selectgoutstanding')->name('posts.selectgoutstanding');
     Route::resource('posts', 'PostController');
 
 });

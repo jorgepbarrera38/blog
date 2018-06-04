@@ -10,7 +10,7 @@ class BlogController extends Controller
 {
 
     public function index(){
-        $outstanding = Post::where('outstanding', true)->first();
+        $outstanding = Post::where('outstanding', true)->where('published', true)->first();
         $posts_sidebar = Post::where('published', true)->inRandomOrder()->take(3)->get();
         $posts = Post::where('published', true)->latest()->paginate(10);
         return view('blog.index', compact('posts', 'outstanding', 'posts_sidebar'));
