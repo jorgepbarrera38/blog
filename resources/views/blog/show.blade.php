@@ -6,9 +6,16 @@
             <h1>{{ $post->title }}</h1>
         </header>
 
-        <span class="image main"><img src="{{ secure_asset($post->imagelarge) }}" alt="" /></span>
+        <span class="image main"><img src="{{ asset($post->imagelarge) }}" alt="" /></span>
 
         <p>{!! $post->body !!}</p>
+        
+        <h3>Etiquetas</h3>
+        <div class="form-group">
+            @foreach($post->tags as $tag)
+                <a href="{{ route('blog.tag', $tag->slug) }}">{{ $tag->name }}  </a>
+            @endforeach
+        </div>
         
         <!--<hr class="major" />
 

@@ -1,6 +1,6 @@
 @extends('blog.layouts.main')
 @section('css')
-    <link rel="stylesheet" href="{{ secure_asset('toastr/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('toastr/css/toastr.min.css') }}">
 @endsection
 @section('content')
 <section>
@@ -37,7 +37,7 @@
 </section>
 @endsection
 @section('scripts')
-<script src="{{ secure_asset('toastr/js/toastr.min.js') }}"></script>
+<script src="{{ asset('toastr/js/toastr.min.js') }}"></script>
        @if(session('info'))
             <script>
                 toastr.success('{{ session('info') }}')

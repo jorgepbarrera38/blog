@@ -16,7 +16,7 @@ class PostsTableSeeder extends Seeder
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Repudianddae repellat voluptate';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis p.',
@@ -31,12 +31,19 @@ class PostsTableSeeder extends Seeder
             Morbi ultricies est at nulla commodo aliquam. Cras tincidunt dictum elit, vitae sodales nunc lobortis et. Donec urna lectus, congue nec urna in, imperdiet luctus felis. Sed in dignissim lacus. Praesent iaculis, ante quis consequat fringilla, nunc diam viverra felis, id ullamcorper nulla leo eu dui. Nunc sit amet malesuada erat. Quisque semper augue dui. Donec in nisi metus. Sed nec orci venenatis, efficitur mauris in, euismod risus. Fusce vestibulum risus nec lectus viverra ultrices. Donec consequat sed magna vitae ultricies. Aenean sagittis neque a leo ullamcorper blandit.',
             'imagesmall' => $imgsm,
             'imagelarge' => $imglg,
-            'user_id' => 1
+            'user_id' => 1,
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Aenean commodo ligula eget door.';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Maecenas maximus fermentum orci, vel maximus ante scelerisque vitae. Pellentesque eget purus nibh. Nullam blandit vitae nisi ut auctor.',
@@ -52,10 +59,17 @@ class PostsTableSeeder extends Seeder
             'published' => false,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Aenean massa.';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'In eu feugiat elit, eu mollis massa. Proin lobortis, nulla ut tristique iaculis, purus mauris viverra elit, a iaculis eros mauris et purus. ',
@@ -70,10 +84,17 @@ class PostsTableSeeder extends Seeder
             'imagelarge' => $imglg,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Vivamus auctor ornare mi ut pel';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Pellentesque auctor quis purus eget euismod. Vestibulum ultricies neque id dui gravida bibendum. Ut vitae mi lacus. Cras mi nulla, egestas ut dap',
@@ -88,10 +109,17 @@ class PostsTableSeeder extends Seeder
             'imagelarge' => $imglg,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Mauris lacus ipsum, blandit in';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Sed feugiat, dolor quis tincidunt tincidunt, nibh nisl interdum urna, quis facilisis orci ipsum in mi. Donec dapibus eros nisi, eu consequat felis he.',
@@ -107,10 +135,17 @@ class PostsTableSeeder extends Seeder
             'published' => false,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Sed feugiat, dolor quis';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Sed feugiat, dolor quis tincidunt tincidunt, nibh nisl interdum urna, quis facilisis orci ipsum in mi. Donec dapibus eros nisi, eu consequat felis he.',
@@ -126,10 +161,17 @@ class PostsTableSeeder extends Seeder
             'published' => false,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Repudiandae repellat voluptate';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis p.',
@@ -146,10 +188,17 @@ class PostsTableSeeder extends Seeder
             'imagelarge' => $imglg,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Aen commodo ligula eget door.';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Maecenas maximus fermentum orci, vel maximus ante scelerisque vitae. Pellentesque eget purus nibh. Nullam blandit vitae nisi ut auctor.',
@@ -165,10 +214,17 @@ class PostsTableSeeder extends Seeder
             'published' => false,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Aen massa.';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'In eu feugiat elit, eu mollis massa. Proin lobortis, nulla ut tristique iaculis, purus mauris viverra elit, a iaculis eros mauris et purus. ',
@@ -183,10 +239,17 @@ class PostsTableSeeder extends Seeder
             'imagelarge' => $imglg,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Vivamus aor ornare mi ut pel';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Pellentesque auctor quis purus eget euismod. Vestibulum ultricies neque id dui gravida bibendum. Ut vitae mi lacus. Cras mi nulla, egestas ut dap',
@@ -201,10 +264,17 @@ class PostsTableSeeder extends Seeder
             'imagelarge' => $imglg,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'ris lacus ipsum, blandit in';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Sed feugiat, dolor quis tincidunt tincidunt, nibh nisl interdum urna, quis facilisis orci ipsum in mi. Donec dapibus eros nisi, eu consequat felis he.',
@@ -220,10 +290,17 @@ class PostsTableSeeder extends Seeder
             'published' => false,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+            
         $imgsm = $faker->imageUrl('416', '256');
         $imglg = $faker->imageUrl('1280', '416');
         $titlePost = 'Sed fiat, dolor quis';
-        Post::create([
+        $post = Post::create([
             'title' => $titlePost,
             'slug' => str_slug($titlePost),
             'excerpt' => 'Sed feugiat, dolor quis tincidunt tincidunt, nibh nisl interdum urna, quis facilisis orci ipsum in mi. Donec dapibus eros nisi, eu consequat felis he.',
@@ -239,5 +316,12 @@ class PostsTableSeeder extends Seeder
             'published' => false,
             'user_id' => 1
         ]);
+
+        $post->tags()->attach([
+            rand(1,3),
+            rand(3, 6),
+            rand(6, 9)
+        ]);
+
     }
 }
